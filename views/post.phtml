@@ -4,7 +4,7 @@
         <div class="p-2">
             <a href="<?php echo $_SERVER['HTTP_REFERER']?>" class="btn btn-primary" style="border: 0px;"><i class="fas fa-caret-left"></i> Back</a>
         </div>
-        <?php if( $_SESSION['loggedInId'] == $post['userId'] ) { ?>
+        <?php if( $_SESSION ) if( $_SESSION['loggedInId'] == $post['userId'] ) { ?>
             <div class="ml-auto p-2">
                 <a href="editPost.php?id=<?php echo $post['id']; ?>" class="btn btn-primary" style="border: 0px;"><i class="fas fa-edit"></i></a>
             </div>
