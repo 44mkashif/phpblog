@@ -1,0 +1,17 @@
+<div class="container jumbotron">
+    <h1 class="display-3 text-center" style="color: #2C3E50">Posts</h1>
+    <hr style="height:2px; background-color: #2C3E50">
+    <?php if( isset($_GET['alert'] ) ) {
+        echo $alertMessage;
+    } ?>
+    <?php foreach($posts as $post) : ?>
+        <div class="container">
+            <br>
+            <h3 class="display-5" style="color: #2C3E50"><?php echo $post['title']; ?></h3>
+            <small class="lead" style="font-size: 15px; font-style: italic">Created at <?php echo $post['created_at']; ?> by <?php echo $post['author']; ?></small>
+            <p class="lead"><?php echo $post['body']; ?></p>
+            <a href="post.php?id=<?php echo $post['id']; ?>" class="btn btn-primary" style="background-color: #2C3E50; border: 0px;">Read More</a>
+            <hr class="mt-5" style="width: 75%">
+        </div>
+    <?php endforeach; ?>
+</div>
